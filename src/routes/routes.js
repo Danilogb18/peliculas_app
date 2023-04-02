@@ -23,5 +23,4 @@ router.get('/movies', async (req, res) => {
 
 router.get('*', (req, res) => {
     res.status(404).redirect('/movies')
-    console.log('Cuidao');
 })

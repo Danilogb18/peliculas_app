@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PelisDan</title>
+    <link rel="stylesheet" href="/css/maiN.css">
+    <link rel="stylesheet" href="/css/moviePage.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script defer type="module" src="/javascript/main.js"></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>PelisDan</h1>
+        </div>
+    </header>
+    <section id="introsection">
+        <div class="container">
+            <div class="introInfo">
+                <h1>Las mejores películas, las que deben estar en tu repertorio mental si o sí.</h1>
+                <div class="searchBarContainer">
+                    <input placeholder="" id="searchMovie" type="text" class="input">
+                    <i class="fa fa-search"></i>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+    <section id="moviesSection">
+        <div class="container">
+            <% movies.forEach((element) => { %>
+                <div class="movieCardContainer">
+                    <a href="/watch"><div data-movie-id="<%= element.tmdb_id%>" data-movie-source="<%= element.video_source%>" style="background-image: url('/imgs/posters/joker.jpeg');" class="movieCard"> Arthur Fleck es un hombre ignorado por la sociedad, cuya motivación en la vida es hacer reír. Pero una serie de trágicos acontecimientos le llevarán a ver el mundo de otra forma. Película basada en Joker, el popular personaje de DC Comics y archivillano de Batman, pero que en este film toma un cariz más realista y oscuro.</div></a>
+                    <h3 id="movie-title">Movie</h3>
+                </div>
+            <%})%>
+            
+        </div>
+    </section>
+    
+</body>
+</html>

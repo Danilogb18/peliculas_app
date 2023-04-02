@@ -1,0 +1,46 @@
+{
+  
+  "name": "peliculas_app",
+  
+  "version": "1.0.0",
+  
+  "main": "index.js",
+  
+  "type": "module",
+  
+  "scripts": {
+  
+    
+  "dev": "nodemon src/index.js"
+  
+  },
+  
+  "author": "",
+  
+  "license": "ISC",
+  
+  "description": "",
+  
+  "dependencies": {
+  
+    
+  "ejs": "^3.1.8",
+  
+    
+  "env": "^0.0.2",
+  
+    
+  "express": "^4.18.2",
+  
+    
+  "mysql2": "^3.2.0"
+  
+  },
+  
+  "devDependencies": {
+  
+    
+  "nodemon": "^2.0.22"
+  
+  }
+}

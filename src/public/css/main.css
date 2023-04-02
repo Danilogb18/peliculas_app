@@ -1,0 +1,155 @@
+* {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI';
+}
+
+body{
+    
+    background-color: #111302;
+    /* background-color: rgb(240, 240, 240); */
+    color: white;
+    margin: 0;
+}
+
+.container{
+    max-width: 1350px;
+    margin: auto;
+}
+
+header{
+    background-color: #fffb00;
+    color: black;
+    margin: 0;
+    padding: 0;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 2px 2px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+}
+
+header a{
+    text-decoration: none;
+}
+
+header h1{
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 25px 10px;
+    cursor: pointer;
+    width: fit-content;
+    height: fit-content;
+}
+
+#movieInfoSection{
+    margin-top: 100px;
+}
+
+#movieInfoSection .container{
+    display: flex;
+    flex-direction: row;
+    max-width: 1100px;
+    justify-content: start;
+    align-items: center;
+    
+}
+
+#movieInfoSection .container .leftSideInfo{
+    display: flex;
+    flex-direction: column;
+    min-width: 200px;
+    max-width: 200px;
+}
+
+.leftSideInfo .posterContainer{
+    display: block;
+    position: relative;
+    width: 100%;
+    padding-bottom: 150%;
+}
+
+.leftSideInfo .posterContainer img{
+    margin: 0 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+
+}
+
+#movieInfoSection .container .rightSideInfo{
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    padding: 0 20px 0 40px;
+}
+
+#movieInfoSection .container .rightSideInfo h5{
+    margin: 0;
+}
+
+#movieInfoSection .container .rightSideInfo h1{
+    font-size: 1.8em;
+}
+
+#movieInfoSection .container .rightSideInfo .director-info{
+    font-weight: 300;
+    color: rgb(200, 200, 200)
+}
+
+
+#firstsection .container{
+   
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    max-width: 1100px;
+}
+
+#firstsection .container .video-wrapper{
+    min-width: 100%;
+    max-width: 100%;
+    position: relative;
+    padding-bottom: 56.25%; /* este porcentaje equivale al aspect:ratio 16:9 */
+    margin-bottom: 50px;
+
+}
+
+#firstsection .container iframe{
+    box-sizing: border-box;
+    padding: 0 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+
+@media (max-width:570px){
+    #movieInfoSection .container{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #movieInfoSection .container .rightSideInfo{
+        padding: 0 20px;
+        text-align: center;
+    }
+
+    .leftSideInfo .posterContainer img{
+        margin: 0 ;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 20px;
+    
+    }
+}

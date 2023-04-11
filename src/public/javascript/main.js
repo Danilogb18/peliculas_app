@@ -2,6 +2,8 @@
 const frame = document.getElementById('iframe');
 const movieClikers = document.querySelectorAll('.movieCard')
 const movieTitles = Array.from(document.querySelectorAll('#movie-title'))
+
+const noMovieMessage = document.querySelector('.no-movies-found');
 const moviesSection = document.querySelectorAll('#moviesSection > div')[0]
 
 const headerText = document.querySelector('header > div > h1');
@@ -40,15 +42,29 @@ if(movieClikers.length > 0){ //* Este codigo se ejcuta en la pagina donde se mue
     })
 
     function SearchMovies(text){
-        let results = movieTitles.filter(item => item.textContent.toLowerCase().includes(text.toLowerCase()))
-        moviesSection.innerHtml = results
+        const movieTitlesPlusSpan = movieTitles.map((element) => ({tituloOriginal: element, tituloEspanol:element.nextElementSibling}))
+        //let results1 = movieTitlesPlusSpan.filter(item => item.tituloOriginal.textContent.toLowerCase().includes(text.toLowerCase()))
+        let results = [];
+        for (let index = 0; index < movieTitlesPlusSpan.length; index++) {
+            const element = movieTitlesPlusSpan[index];
+            if(element.tituloOriginal.textContent.toLowerCase().includes(text.toLowerCase())){
+                results.push(element.tituloOriginal)
+            } else if(element.tituloEspanol.textContent.toLowerCase().includes(text.toLowerCase())){
+                results.push(element.tituloOriginal)
+            }
+        }
         moviesSection.innerHTML = ''
+
+        if(results.length > 0){
+            noMovieMessage.style.display = 'none';
+        } else{
+            noMovieMessage.style.display = 'block';
+        }
         for (let index = 0; index < results.length; index++) {
             const element = results[index];
             moviesSection.appendChild(element.parentElement)
         }
     }
-
 
     movieClikers.forEach(clicker => {
 
@@ -58,7 +74,9 @@ if(movieClikers.length > 0){ //* Este codigo se ejcuta en la pagina donde se mue
         .then(response => response.json())
         .then(data => { //aqui seteo los datos de la pagina donde salen todas las peliculas
             let title = (clicker.parentElement.nextElementSibling)
-            title.textContent = data.original_title //establecer titulo
+            let spanTitle = (clicker.parentElement.nextElementSibling.nextElementSibling)
+            spanTitle.textContent = data.title 
+            title.textContent = data.original_title 
             if(data.overview.length > 290){ //establecer descripcion
                 clicker.textContent = (data.overview.substring(0,290) + '...')
             } else{

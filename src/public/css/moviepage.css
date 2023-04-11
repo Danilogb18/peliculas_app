@@ -138,6 +138,26 @@
     padding: 0 10px;
 }
 
+#moviesSection  .no-movies-found{
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#moviesSection .no-movies-found i{
+    color: grey;
+    font-size: 5em;
+    width: 100%;
+    text-align: center;
+}
+
+#moviesSection .no-movies-found h3{
+    text-align: center;
+    color: grey;
+    padding: 0 10px;
+}
+
 @media (max-width:450px){
     #introsection .container .introInfo{
         font-size: 0.8em;
